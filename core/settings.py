@@ -94,6 +94,8 @@ REST_FRAMEWORK = {
     ],
 }
 
+URL_GET = os.environ.get('URL_GET', 'https://jsonplaceholder.typicode.com/todos')
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 

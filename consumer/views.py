@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from consumer.serializers import UserSerializer, LogSerializer
 from rest_framework.permissions import IsAuthenticated
 import requests
+from django.conf import settings
 from drf_api_logger.models import APILogsModel
 
 
@@ -13,7 +14,7 @@ class ListUsers(APIView):
     def get(self, request):
         
         try:
-            req = requests.get('https://jsonplaceholder.typicode.com/todos')
+            req = requests.get(settings.URL_GET)
             users = req.json()[:5]
             serializer = UserSerializer(data=users, many=True)
             if serializer.is_valid():
