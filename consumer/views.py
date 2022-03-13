@@ -1,8 +1,10 @@
 from rest_framework.views import APIView
+from rest_framework import generics
 from rest_framework.response import Response
-from consumer.serializers import UserSerializer
+from consumer.serializers import UserSerializer, LogSerializer
 from rest_framework.permissions import IsAuthenticated
 import requests
+from drf_api_logger.models import APILogsModel
 
 
 class ListUsers(APIView):
@@ -19,3 +21,9 @@ class ListUsers(APIView):
             return Response({'error': f'reason: {serializer.errors}'}, status=400)
         except Exception as e:
             return Response({'error': f'reason: {e}'}, status=400)
+
+
+class LogListView(generics.ListAPIView):
+    queryset = APILogsModel.objects.all()
+    serializer_class = LogSerializer
+    permission_classes = [IsAuthenticated]

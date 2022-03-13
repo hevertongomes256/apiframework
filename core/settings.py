@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_api_logger',
+    'drf_yasg',
     'consumer',
 ]
 
@@ -50,7 +52,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'drf_api_logger.middleware.api_logger_middleware.APILoggerMiddleware',
 ]
+
+DRF_API_LOGGER_DATABASE = True
 
 ROOT_URLCONF = 'core.urls'
 
