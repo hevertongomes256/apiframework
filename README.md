@@ -10,9 +10,9 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requeri
 virtualenv venv
 ```
 
-``bash
+```bash
 source venv/bin/activate
-
+```
 
 ```bash
 pip install -r requirients.txt
