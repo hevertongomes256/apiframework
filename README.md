@@ -15,7 +15,7 @@ source venv/bin/activate
 ```
 
 ```bash
-pip install -r requirients.txt
+pip install -r requirements.txt
 ```
 
 # Banco de Dados
