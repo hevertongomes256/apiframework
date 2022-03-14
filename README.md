@@ -7,8 +7,11 @@ API para buscar usuários de uma base externa
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requerimenst.txt.
 
 ```bash
-virtualenv
+virtualenv venv
 ```
+
+``bash
+source venv/bin/activate
 
 
 ```bash
